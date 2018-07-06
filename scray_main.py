@@ -1,8 +1,9 @@
 #coding:utf-8
-from urllib.request import urlopen
-from bs4 import BeautifulSoup
+import requests
 
-html = urlopen("http://realdgame.jp/")
-bsObj = BeautifulSoup(html, "html.parser")
-allText = bsObj.findAll(id="text")
-print(allText[0].get_text())
+sach={'q':'Pthon','users':'1000'}
+url = 'http://b.hatena.ne.jp/search/text'
+req = requests.get(url, params = sach, timeout = 15)
+
+with open('sample.htm','w',encoding='utf-8') as f:
+    f.write(req.text)
