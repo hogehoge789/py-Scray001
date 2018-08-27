@@ -1,5 +1,6 @@
 #coding:utf-8
 import requests
+from bs4 import BeautifulSoup
 
 sach={'q':'Pthon','users':'1000'}
 url = 'http://b.hatena.ne.jp/search/text'
